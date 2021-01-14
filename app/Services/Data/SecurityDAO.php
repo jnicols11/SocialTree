@@ -79,6 +79,7 @@ class SecurityDAO {
 			$user = new UserModel($firstname, $lastname, $email, $number, $password);
 			
 			// Create sessions
+			session_start();
 			session(['firstname' => $user->getFirstname()]);
 			session(['lastname' => $user->getLastname()]);
 			session(['email' => $user->getEmail()]);

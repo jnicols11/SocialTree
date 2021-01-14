@@ -51,4 +51,15 @@ class UserController extends Controller
 		// Login failed
 		return view('loginFail');
 	}
+	
+	public function logout() {
+		// clear sessions
+		session_start();
+		session(['firstname' => null]);
+		session(['lastname' => null]);
+		session(['email' => null]);
+		session(['number' => null]);
+		
+		return view('home');
+	}
 }

@@ -11,4 +11,7 @@ Route::post('doregister', 'UserController@register');
 // Route Login Page and Form Submit
 Route::get('/login', function () { return view('login'); });
 Route::post('dologin', 'UserController@login');
+
+// Route Logout
+Route::get('/logout', 'UserController@logout');
 	
