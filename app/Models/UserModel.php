@@ -8,6 +8,10 @@ class UserModel {
 	private $email;
 	private $number;
 	private $password;
+	private $location;
+	private $bio;
+	private $picture;
+	private $admin;
 	
 	// function constructor to populate the user model
 	public function __construct($firstname, $lastname, $email, $number, $password) {
@@ -88,6 +92,64 @@ class UserModel {
 	 */
 	public function setPassword($password) {
 		$this->password = $password;
-	}	
+	}
+	
+	/**
+	 * @return mixed
+	 */
+	public function getLocation() {
+		return $this->location;
+	}
+	
+	/**
+	 * @return mixed
+	 */
+	public function getBio() {
+		return $this->bio;
+	}
+	
+	/**
+	 * @return mixed
+	 */
+	public function getPicture() {
+		return $this->picture;
+	}
+	
+	/**
+	 * @return mixed
+	 */
+	public function getAdmin() {
+		return $this->admin;
+	}
+	
+	/**
+	 * @param mixed $location
+	 */
+	public function setLocation($location) {
+		$this->location = $location;
+	}
+	
+	/**
+	 * @param mixed $bio
+	 */
+	public function setBio($bio) {
+		$this->bio = $bio;
+	}
+	
+	/**
+	 * @param mixed $picture
+	 */
+	public function setPicture($picture) {
+		$this->picture = $picture;
+	}
+	
+	/**
+	 * @param mixed $admin
+	 */
+	public function setAdmin($admin) {
+		$this->admin = $admin;
+	}
+	
+	
 }
 

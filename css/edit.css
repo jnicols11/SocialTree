@@ -1,0 +1,36 @@
+body {
+	text-align: center;
+}
+
+.title {
+	margin-top: 5rem;
+}
+
+.editForm {
+	display: inline-block;
+	background-color: #009933;
+	margin-top: 2rem;
+}
+
+.editTable {
+	border-spacing: 1rem 2rem;
+}
+
+.editTable__Label {
+	font-size: 1.2rem;
+}
+
+.editTable__Input {
+	width: 30rem;
+	margin-right: 2rem;
+}
+
+.goback {
+	text-decoration: none;
+	border-bottom: none;
+	color: black;
+}
+
+.goback:visited {
+	color: black;
+}

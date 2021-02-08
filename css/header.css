@@ -1,0 +1,45 @@
+@charset "ISO-8859-1";
+
+h2 {
+	font-size: 2rem;
+	margin: 2rem 2rem;
+}
+
+.navbar {
+	background-color: #009933;
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	height: 5rem;
+	margin-top: 5rem;
+	border: solid 1px black;
+}
+
+.navbar__list {
+	display: flex;
+	justify-content: space-around;
+}
+
+.navbar__list__item {
+	list-style: none;
+	margin-top: 1.8rem;
+	font-size: 1.3rem;
+}
+
+.navbar__list::selection {
+	color: #009933;
+	background: white;
+}
+
+.navbar__list__item a {
+	text-decoration: none;
+	color: #000;
+}
+
+.navbar__list__item a:visited {
+	color: #000;
+}
+
+#logo {
+	list-style: none;
+}

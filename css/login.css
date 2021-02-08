@@ -1,0 +1,32 @@
+body {
+	text-align: center;
+}
+
+.loginForm {
+	display: inline-block;
+	background-color: #009933;
+	margin-top: 5rem;
+}
+
+.loginTable {
+	border-spacing: 1rem 1.5rem;
+}
+
+.loginInput {
+	width: 25rem;
+}
+
+.loginLabel {
+	font-size: 1.2rem;
+}
+
+.goback {
+	text-decoration: none;
+	border-bottom: none;
+	color: black;
+	margin-left: 2rem;
+}
+
+.goback:visited {
+	color: black;
+}
