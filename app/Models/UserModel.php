@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Services\Business\SecurityService;
+
 class UserModel {
 	private $firstname;
 	private $lastname;
@@ -150,6 +152,12 @@ class UserModel {
 		$this->admin = $admin;
 	}
 	
-	
+	// function to get all user work experience
+	public function getWorkHistroy() {
+		$service = new SecurityService();
+		
+		$work = $service->getWorkHistory();
+		return $work;
+	}
 }
 

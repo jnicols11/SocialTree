@@ -26,9 +26,7 @@
 		"preferred-install" : "dist",
 		"sort-packages" : true
 	},
-	"extra" : {
-		"laravel" : {}
-	},
+	"extra" : {},
 	"autoload" : {
 		"psr-4" : {
 			"App\\" : "app/"

@@ -1,0 +1,230 @@
+body {
+	text-align: center;
+}
+
+.title {
+	margin-top: 5rem;
+}
+
+.editForm {
+	display: inline-block;
+	background-color: #009933;
+	margin-top: 2rem;
+	border: solid black;
+}
+
+.editTable {
+	border-spacing: 1rem 2rem;
+}
+
+.editTable__Label {
+	font-size: 1.2rem;
+}
+
+.editTable__Input {
+	width: 30rem;
+	margin-right: 2rem;
+}
+
+.goback {
+	text-decoration: none;
+	border-bottom: none;
+	color: black;
+}
+
+.goback:visited {
+	color: black;
+}
+
+.workForm {
+	display: inline-block;
+	background-color: #009933;
+	margin-top: 2rem;
+	width: 40%;
+	margin-bottom: 5rem;
+	border: solid black;
+}
+
+.workTable {
+	border-spacing: 1rem 2rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profileForm {
+	width: 50%;
+	height: 200px;
+	background-color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	display: inline-block;
+	text-align: left;
+	border-radius: 25px;
+	box-shadow: 5px 5px .4em #999;
+}
+
+.profile_picture {
+	border-radius: 50%;
+	height: 75px;
+	margin: 20px;
+	box-shadow: 3px 3px #009933, -1em 0 .4em #333;
+	position: relative;
+	margin-bottom: 75px;
+}
+
+.profile_input_firstname {
+	position: absolute;
+	margin-top: 50px;
+	margin-right: 10px;
+	border: none;
+	font-size: 16px;
+}
+
+.profile_input_lastname {
+	position: absolute;
+	margin-top: 50px;
+	margin-left: 60px;
+	border: none;
+	font-size: 16px;
+}
+
+.profile_input_location {
+	position: absolute;
+	margin-top: 70px;
+	margin-left: 10px;
+	border: none;
+	font-size: 14px;
+}
+
+.profile__textarea {
+	position: absolute;
+	margin-top: 100px;
+	border: none;
+	resize: none;
+}
+
+.profile_input_firstname:focus {
+	outline: none;
+}
+
+.profile_input_lastname:focus {
+	outline: none;
+}
+
+.profile_input_location:focus {
+	outline: none;
+}
+
+.profile__textarea:focus {
+	outline: none;
+}
+
+.profile_edit_button {
+	margin-left: 500px;
+}
+
+.job {
+	background-color: #fff;
+	margin-top: 50px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: space-between;
+	box-shadow: 5px 5px .4em #999;
+	align-items: center;
+	border-radius: 5px;
+}
+
+
+.job_label {
+	margin-right: 5px;
+}
+
+.workButtonGroup {
+	display: flex;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: space-around;
+	margin-top: 30px;
+}
+
+.workAddGroup {
+	margin-top: 45px;
+	background-color: #009933;
+	width: 10%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 30px;
+	border-radius: 20px;
+	box-shadow: 5px 5px .4em #999;
+	transition: all .4s;
+}
+
+.work_add_button {
+	text-decoration: none;
+	font-size: 16px;
+	color: white;
+	margin-top: auto;
+}
+
+.workAddGroup:hover {
+	transform: translate(3px, -3px);
+	background-color: #008000;
+}
+
+.popup {
+	visibility: hidden;
+	opacity: 0;
+	transition: all 2s;
+	backdrop-filter: blur(10px);
+	background-color: rgba(black, 0.3);
+}
+
+.workpopup {
+	visibility: hidden;
+	opacity: 0;
+	transition: all 2s;
+	backdrop-filter: blur(10px);
+	background-color: rgba(black, 0.3);
+}
+
+.popup:target {
+	visibility: visible;
+	opacity: 1;
+    transform: translate(0, -260%) scale(1);
+}
+
+.workpopup:target {
+	visibility: visible;
+	opacity: 1;
+	transform: translate(0, -180%) scale(1);
+}
+
+.work_input:focus {
+	outline: none;
+}
+
+.work_textbox {
+	outline: none;
+	resize: none;
+}
+
+.workButton {
+	font-size: 16px;
+	width: 150%;
+	height: 120%;
+	border-radius: 10px;
+	background-color: #009933;
+	color: #fff;
+	box-shadow: 2px 3px 1px #999;
+	transition: all .3s;
+}
+
+.workButton:hover {
+	transform: translate(3px, -3px);
+	background-color: #008000;
+}
+
+

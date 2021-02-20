@@ -76,6 +76,7 @@ class SecurityDAO {
 			
 			// Create sessions
 			session_start();
+			session(['id' => $user_info['ID']]);
 			session(['firstname' => $user->getFirstname()]);
 			session(['lastname' => $user->getLastname()]);
 			session(['email' => $user->getEmail()]);

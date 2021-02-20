@@ -8,6 +8,13 @@ use App\Services\Business\SecurityService;
 
 class UserController extends Controller
 {
+	private function validateUser(Request $request) {
+		// Setup Data Validation Rules for Users
+		$rules = ['firstname' => 'Required | Between:2,30 | Alpha', 'lastname' => 'Required | Between:2,50 | Alpha', 'email' => 'Required | Between:5,100', 'number' => 'Required', 'password' => 'Required | Between:7,100'];
+		
+		$this->validate($request, $rules);
+	}
+	
 	public function register(Request $request) {
 		
 		// Establish variables from request
@@ -17,8 +24,13 @@ class UserController extends Controller
 		$number = $request->input('number');
 		$password = $request->input('password');
 		
+		// Validate the Form Data
+		$this->validateUser($request);
+		
 		// populate the model
-		$user = new UserModel($firstname, $lastname, $email, $number, $password);		// Create instance of security service
+		$user = new UserModel($firstname, $lastname, $email, $number, $password);
+		
+		// Create instance of security service
 		$service = new SecurityService();
 		
 		// Send User to be registered to service
@@ -59,6 +71,7 @@ class UserController extends Controller
 	
 	public function getUser(Request $request) {
 		$email = $request->input('email');
+		
 		$service = new SecurityService();
 		
 		// populate the user
@@ -90,6 +103,9 @@ class UserController extends Controller
 		$bio = $request->input('bio');
 		$picture = $request->input('picture');
 		$admin = $request->input('admin');
+		
+		// Validate the Form Data
+		$this->validateUser($request);
 		
 		$oldemail = $request->input('oldemail');
 		
@@ -126,6 +142,9 @@ class UserController extends Controller
 		$picture = $request->input('picture');
 		$admin = session('admin');
 		
+		// Validate the Form Data
+		$this->validateUser($request);
+		
 		$oldemail = $request->input('oldemail');
 		
 		// populate user model
@@ -141,8 +160,18 @@ class UserController extends Controller
 		
 		// return view if success
 		if($service->updateUserByEmail($user, $oldemail)) {
+			$profile = [];
+			$id = session('id');
 			
-			return view('profile', ['user' => $user]);
+			// add user to profile
+			array_push($profile, $user);
+			
+			$work_history = $service->getWorkHistoryById($id);
+			
+			// add work history to profile
+			array_push($profile, $work_history);
+			
+			return view('profile', compact('profile'));
 		}
 		
 		return view('updatefail');
@@ -170,6 +199,7 @@ class UserController extends Controller
 	public function logout() {
 		// clear sessions
 		session_start();
+		session(['id' => null]);
 		session(['firstname' => null]);
 		session(['lastname' => null]);
 		session(['email' => null]);

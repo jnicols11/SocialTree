@@ -4,6 +4,7 @@ namespace App\Services\Business;
 
 use App\Models\UserModel;
 use App\Services\Data\SecurityDAO;
+use App\Services\Data\PortfolioDAO;
 
 class SecurityService {
 	private $connection;
@@ -52,5 +53,23 @@ class SecurityService {
 		$dao = new SecurityDAO($this->connection);
 		return $dao->deleteUserByEmail($email);
 	}
+	
+	public function getWorkHistoryById($id) {
+		$dao = new PortfolioDAO($this->connection);
+		$work = $dao->getWorkHistoryById($id);
+		
+		return $work;
+	}
+	
+	public function addWorkExperience($work) {
+		$dao = new PortfolioDAO($this->connection);
+		return $dao->addWorkExperience($work);
+	}
+	
+	public function deleteWorkExperienceByTitle($title, $id) {
+		$dao = new PortfolioDAO($this->connection);
+		return $dao->deleteWorkExperienceByTitle($title, $id);
+	}
+
 }
 

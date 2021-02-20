@@ -28,6 +28,15 @@
 			</tr>
 		</table>
 	</form>
+	<?php 
+	if($errors->count() != 0) {
+		echo "<h5>List of Errors</h5>";
+		foreach($errors->all() as $message)
+		{
+			echo $message . "<br/>";
+		}
+	}
+	?>
 @include('layouts.footer')
 </body>
 </html>

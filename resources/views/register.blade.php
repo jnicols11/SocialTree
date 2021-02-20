@@ -14,21 +14,38 @@
 		<table class="registerTable">
 			<tr class="registerTable__row">
 				<td><label class="registerLabelFirstName">First Name: </label>
-				<input class="registerInputName" type="text" name="firstname" placeholder="John" /></td>
+				<input class="registerInputName" type="text" name="firstname" placeholder="John" />
+				<?php echo $errors->first('firstname')?></td>
 				<td><label class="registerLabel">Last Name: </label>
-				<input class="registerInputName" type="text" name="lastname" placeholder="Smith" /></td>
+				<input class="registerInputName" type="text" name="lastname" placeholder="Smith" />
+				<?php echo $errors->first('lastname')?></td>
 			</tr>
 			<tr class="registerTable__row">
-				<td><label class="registerLabel">Email Address: </label></td>
-				<td><input class="registerInput" type="email" name="email" placeholder="someone@example.com" /></td>
+				<td>
+					<label class="registerLabel">Email Address: </label>
+				</td>
+				<td>
+					<input class="registerInput" type="email" name="email" placeholder="someone@example.com" />
+					<?php echo $errors->first('email')?>
+				</td>
 			</tr>
 			<tr class="registerTable__row">
-				<td><label class="registerLabel">Phone Number: </label></td>
-				<td><input class="registerInput" type="tel" name="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="012-345-6789" /></td>
+				<td>
+					<label class="registerLabel">Phone Number: </label>
+				</td>
+				<td>
+					<input class="registerInput" type="tel" name="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="012-345-6789" />
+					<?php echo $errors->first('number')?>
+				</td>
 			</tr>
 			<tr class="registerTable__row">
-				<td><label class="registerLabel">Password: </label></td>
-				<td ><input class="registerInput" type="password" name="password" placeholder="password" /></td>
+				<td>
+					<label class="registerLabel">Password: </label>
+				</td>
+				<td >
+					<input class="registerInput" type="password" name="password" placeholder="password" />
+					<?php echo $errors->first('password')?>
+				</td>
 			</tr>
 			<tr class="registerTable__row">
 				<td colspan="1">
