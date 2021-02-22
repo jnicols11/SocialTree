@@ -172,6 +172,19 @@ class UserController extends Controller
 			// add work history to profile
 			array_push($profile, $work_history);
 			
+			// Get Edu History from service
+			$education = $service->getEduHistoryById($id);
+			
+			// add edu history to profile
+			array_push($profile, $education);
+			
+			// get skills from service
+			$skills = $service->getSkillsById($id);
+			
+			// add skill to profile
+			array_push($profile, $skills);
+			
+			// Send profile array to profile view
 			return view('profile', compact('profile'));
 		}
 		
