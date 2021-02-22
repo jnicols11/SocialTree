@@ -12,6 +12,7 @@ class UserController extends Controller
 		// Setup Data Validation Rules for Users
 		$rules = ['firstname' => 'Required | Between:2,30 | Alpha', 'lastname' => 'Required | Between:2,50 | Alpha', 'email' => 'Required | Between:5,100', 'number' => 'Required', 'password' => 'Required | Between:7,100'];
 		
+		// Validate the Data
 		$this->validate($request, $rules);
 	}
 	

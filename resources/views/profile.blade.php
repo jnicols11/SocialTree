@@ -126,6 +126,7 @@
 						</td>
 						<td>
 							<input type="text" value="{{ $job->getCompany() }}" name="company">
+							<?php echo $errors->first('company')?>
 						</td>
 					</tr>
 					<tr>
@@ -134,6 +135,7 @@
 						</td>
 						<td>
 							<input type="text" value="{{ $job->getTitle() }}" name="title">
+							<?php echo $errors->first('title')?>
 						</td>
 					</tr>
 					<tr>
@@ -142,6 +144,7 @@
 						</td>
 						<td>
 							<textarea class="work_textbox" name="description" rows="4" cols="50">{{ $job->getDescription() }}</textarea>
+							<?php echo $errors->first('description')?>
 						</td>
 					</tr>
 					<tr>
@@ -150,14 +153,16 @@
 						</td>
 						<td>
 							<input type="date" class="work_input" name="start" value="{{ $job->getStart() }}" />
+							<?php echo $errors->first('start')?>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label>Start Date</label>
+							<label>End Date</label>
 						</td>
 						<td>
 							<input type="date" class="work_input" name="end" value="{{ $job->getEnd() }}" />
+							<?php echo $errors->first('end')?>
 						</td>
 					</tr>
 					<tr>
@@ -185,6 +190,7 @@
 						</td>
 						<td>
 							<input type="text" class="workTable__input" placeholder="Microsoft" name="company"/>
+							<?php echo $errors->first('company')?>
 						</td>
 					</tr>
 					<tr>
@@ -193,6 +199,7 @@
 						</td>
 						<td>
 							<input type="text" class="workTable__input" placeholder="Software Engineer II" name="title" />
+							<?php echo $errors->first('title')?>
 						</td>
 					</tr>
 					<tr>
@@ -200,7 +207,8 @@
 							<label class="workTable__label">Description: </label>
 						</td>
 						<td>
-							<textarea class="editTable__textarea" name="description" rows="4" cols="50" placeholder="Enter a description of the job here!"></textarea> 
+							<textarea class="editTable__textarea" name="description" rows="4" cols="50" placeholder="Enter a description of the job here!"></textarea>
+							<?php echo $errors->first('description')?> 
 						</td>
 					</tr>
 					<tr>
@@ -209,6 +217,7 @@
 						</td>
 						<td>
 							<input type="date" class="workTable__date" name="start"/>
+							<?php echo $errors->first('start')?>
 						</td>
 					</tr>
 					<tr>
@@ -217,6 +226,7 @@
 						</td>
 						<td>
 							<input type="date" class="workTable__date" name="end"/>
+							<?php echo $errors->first('end')?>
 						</td>
 					</tr>
 					<tr>
@@ -279,6 +289,7 @@
 							</td>
 							<td>
 								<input type="text" class="edu_input" name="name" value="{{ $edu->getName() }}">
+								<?php echo $errors->first('name')?>
 							</td>
 						</tr>
 						<tr>
@@ -287,6 +298,7 @@
 							</td>
 							<td>
 								<input type="text" class="edu_input" name="degree" value="{{ $edu->getDegree() }}">
+								<?php echo $errors->first('degree')?>
 							</td>
 						</tr>
 						<tr>
@@ -295,6 +307,7 @@
 							</td>
 							<td>
 								<input type="text" class="edu_input" name="field" value="{{ $edu->getField() }}">
+								<?php echo $errors->first('field')?>
 							</td>
 						</tr>
 						<tr>
@@ -303,14 +316,16 @@
 						</td>
 						<td>
 							<input type="date" class="edu_input" name="start" value="{{ $edu->getStart() }}" />
+							<?php echo $errors->first('start')?>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label>Start Date</label>
+							<label>End Date</label>
 						</td>
 						<td>
 							<input type="date" class="edu_input" name="end" value="{{ $edu->getEnd() }}" />
+							<?php echo $errors->first('end')?>
 						</td>
 					</tr>
 					<tr>
@@ -338,7 +353,8 @@
 						<label class="eduTable_label">Institution</label>
 					</td>
 					<td>
-						<input type="text" class="eduTable_input" placeholder="Grand Canyon University" name="name"> 
+						<input type="text" class="eduTable_input" placeholder="Grand Canyon University" name="name">
+						<?php echo $errors->first('name')?> 
 					</td>
 				</tr>
 				<tr>
@@ -347,6 +363,7 @@
 					</td>
 					<td>
 						<input type="text" class="eduTable_input" placeholder="Masters" name="degree">
+						<?php echo $errors->first('degree')?>
 					</td>
 				</tr>
 				<tr>
@@ -355,6 +372,7 @@
 					</td>
 					<td>
 						<input type="text" class="eduTable_input" placeholder="Engineering" name="field">
+						<?php echo $errors->first('field')?>
 					</td>
 				</tr>
 				<tr>
@@ -363,6 +381,7 @@
 					</td>
 					<td>
 						<input type="date" class="eduTable__date" name="start"/>
+						<?php echo $errors->first('start')?>
 					</td>
 				</tr>
 				<tr>
@@ -371,6 +390,7 @@
 					</td>
 					<td>
 						<input type="date" class="eduTable__date" name="end"/>
+						<?php echo $errors->first('end')?>
 					</td>
 				</tr>
 				<tr>
@@ -407,6 +427,7 @@
 					<input type="hidden" name="oldname" value="{{ $skill->getName() }}">
 					<label class="skill_label">Skill Name </label>
 					<input class="skill_input" name="name" value="{{ $skill->getName() }}">
+					<?php echo $errors->first('name')?>
 					<input type="submit" value="Edit Skill!">
 					<a class="goback" href="#skillSection">Go back</a>
 				</form>
@@ -426,6 +447,7 @@
 					</td>
 					<td>
 						<input type="text" class="skillTable_input" name="name" placeholder="Microsoft Office">
+						<?php echo $errors->first('name')?>
 					</td>
 				</tr>
 				<tr>
