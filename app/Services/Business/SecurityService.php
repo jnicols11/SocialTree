@@ -5,6 +5,7 @@ namespace App\Services\Business;
 use App\Models\UserModel;
 use App\Services\Data\SecurityDAO;
 use App\Services\Data\PortfolioDAO;
+use App\Services\Data\JobDAO;
 
 class SecurityService {
 	private $connection;
@@ -116,6 +117,26 @@ class SecurityService {
 		$dao = new PortfolioDAO($this->connection);
 		return $dao->deleteSkillByName($name, $id);
 	}
+	
+	// Job Functions
+	public function getAllJobs() {
+		$dao = new JobDAO($this->connection);
+		return $dao->getAllJobs();
+	}
+	
+	public function addJob($job) {
+		$dao = new JobDAO($this->connection);
+		return $dao->addJob($job);
+	}
 
+	public function editJob($job) {
+		$dao = new JobDAO($this->connection);
+		return $dao->editJob($job);
+	}
+	
+	public function deleteJobById($id) {
+		$dao = new JobDAO($this->connection);
+		return $dao->deleteJobById($id);
+	}
 }
 
