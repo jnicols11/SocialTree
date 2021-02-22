@@ -27,4 +27,11 @@ Route::post('doedit', 'UserController@editUser');
 
 // Route E-Portfolio
 Route::post('addWorkExperience', 'PortfolioController@addWorkExperience');
+Route::post('addEdu', 'PortfolioController@addEdu');
+Route::post('addSkill', 'PortfolioController@addSkill');
+Route::post('editWork', 'PortfolioController@editWork');
+Route::post('editEdu', 'PortfolioController@editEdu');
+Route::post('editSkill', 'PortfolioController@editSkill');
 Route::post('deleteWorkExperience', 'PortfolioController@deleteWorkExperience');
+Route::post('deleteEdu', 'PortfolioController@deleteEdu');
+Route::post('deleteSkill', 'PortfolioController@deleteSkill');

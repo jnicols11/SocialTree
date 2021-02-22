@@ -23,7 +23,7 @@ class SecurityService {
 		return $connection;
 	}
 	
-	
+	// User Functions
 	public function register(UserModel $user) {
 		$dao = new SecurityDAO($this->connection);
 		return $dao->register($user);
@@ -54,6 +54,7 @@ class SecurityService {
 		return $dao->deleteUserByEmail($email);
 	}
 	
+	// Portfolio Functions
 	public function getWorkHistoryById($id) {
 		$dao = new PortfolioDAO($this->connection);
 		$work = $dao->getWorkHistoryById($id);
@@ -61,14 +62,59 @@ class SecurityService {
 		return $work;
 	}
 	
+	public function getEduHistoryById($id) {
+		$dao = new PortfolioDAO($this->connection);
+		return $dao->getEduHistoryById($id);
+	}
+	
+	public function getSkillsById($id) {
+		$dao = new PortfolioDAO($this->connection);
+		return $dao->getSkillsById($id);
+	}
+	
 	public function addWorkExperience($work) {
 		$dao = new PortfolioDAO($this->connection);
 		return $dao->addWorkExperience($work);
 	}
 	
+	public function addEdu($edu) {
+		$dao = new PortfolioDAO($this->connection);
+		return $dao->addEdu($edu);
+	}
+	
+	public function addSkill($skill) {
+		$dao = new PortfolioDAO($this->connection);
+		return $dao->addSkill($skill);
+	}
+	
+	public function editWork($work, $oldcompany) {
+		$dao = new PortfolioDAO($this->connection);
+		return $dao->editWork($work, $oldcompany);
+	}
+	
+	public function editEdu($edu, $oldname) {
+		$dao = new PortfolioDAO($this->connection);
+		return $dao->editEdu($edu, $oldname);
+	}
+	
+	public function editSkill($skill, $oldname) {
+		$dao = new PortfolioDAO($this->connection);
+		return $dao->editSkill($skill, $oldname);
+	}
+	
 	public function deleteWorkExperienceByTitle($title, $id) {
 		$dao = new PortfolioDAO($this->connection);
 		return $dao->deleteWorkExperienceByTitle($title, $id);
+	}
+	
+	public function deleteEduByNameAndDegree($name, $degree, $id) {
+		$dao = new PortfolioDAO($this->connection);
+		return $dao->deleteEduByNameAndDegree($name, $degree, $id); 
+	}
+	
+	public function deleteSkillByName($name, $id) {
+		$dao = new PortfolioDAO($this->connection);
+		return $dao->deleteSkillByName($name, $id);
 	}
 
 }
