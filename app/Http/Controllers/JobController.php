@@ -44,7 +44,7 @@ class JobController extends Controller
 		
 		// populate the job model
 		$job = new JobModel($title, $company, $description);
-		$job.setId($id);
+		$job->setId($id);
 		
 		// create instance of service
 		$service = new SecurityService();

@@ -161,31 +161,7 @@ class UserController extends Controller
 		
 		// return view if success
 		if($service->updateUserByEmail($user, $oldemail)) {
-			$profile = [];
-			$id = session('id');
-			
-			// add user to profile
-			array_push($profile, $user);
-			
-			$work_history = $service->getWorkHistoryById($id);
-			
-			// add work history to profile
-			array_push($profile, $work_history);
-			
-			// Get Edu History from service
-			$education = $service->getEduHistoryById($id);
-			
-			// add edu history to profile
-			array_push($profile, $education);
-			
-			// get skills from service
-			$skills = $service->getSkillsById($id);
-			
-			// add skill to profile
-			array_push($profile, $skills);
-			
-			// Send profile array to profile view
-			return view('profile', compact('profile'));
+			return redirect('/profile');
 		}
 		
 		return view('updatefail');

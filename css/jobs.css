@@ -1,0 +1,101 @@
+.jobsContainer {
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 50px;
+}
+
+.jobContainer {
+	background-color: #999;
+	width: 130%;
+	border-radius: 20px;
+	box-shadow: 4px 4px .4em #000;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
+
+.jobListTable {
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 15px;
+}
+
+.goback {
+	text-decoration: none;
+	border-bottom: none;
+	color: black;
+	font-size: 14px;
+}
+
+.goback:visited {
+	color: black;
+}
+
+.jobAddForm {
+	background-color: #009933;
+	width: 120%;
+	padding-bottom: 20px;
+	border-radius: 20px;
+	box-shadow: 4px 4px .4em #000;
+}
+
+.jobEditForm {
+	background-color: #009933;
+	width: 60%;
+	padding-bottom: 20px;
+	border-radius: 20px;
+	box-shadow: 4px 4px .4em #000;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.jobTable {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.title {
+	text-align: center;	
+}
+
+.job_label {
+	font-size: 14px;
+}
+
+.addJobButtonForm {
+	text-align: center;
+}
+
+.jobTextArea {
+	border: none;
+	resize: none;
+}
+
+.jobFormContainer {
+	display: none !important;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 2s;
+	backdrop-filter: blur(10px);
+	background-color: rgba(black, 0.3);
+}
+
+.editjobpopup {
+	display: none;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 2s;
+	backdrop-filter: blur(10px);
+	background-color: rgba(black, 0.3);
+}
+
+.jobFormContainer:target {
+	display: block !important;
+	visibility: visible;
+	opacity: 1;
+}
+
+.editjobpopup:target {
+	display: block;
+	visibility: visible;
+	opacity: 1;
+}
