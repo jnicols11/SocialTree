@@ -76,7 +76,7 @@ class PortfolioDAO {
 		return $skills;
 	}
 	
-	public function addWorkExperience($work) {
+	public function addWorkExperience(WorkModel $work) {
 		
 		// Create Variables
 		$company = $work->getCompany();
@@ -106,7 +106,7 @@ class PortfolioDAO {
 		return false;
 	}
 	
-	public function addEdu($edu) {
+	public function addEdu(EduModel $edu) {
 		
 		// Create Variables
 		$name = $edu->getName();
@@ -137,7 +137,7 @@ class PortfolioDAO {
 		return false;
 	}
 	
-	public function addSkill($skill) {
+	public function addSkill(SkillModel $skill) {
 		
 		// Create Variables
 		$name = $skill->getName();
@@ -160,7 +160,7 @@ class PortfolioDAO {
 		return false;
 	}
 	
-	public function editWork($work, $oldcompany) {
+	public function editWork(WorkModel $work, $oldcompany) {
 		
 		// Create Variables
 		$company = $work->getCompany();
@@ -194,7 +194,7 @@ class PortfolioDAO {
 		return false;
 	}
 	
-	public function editEdu($edu, $oldname) {
+	public function editEdu(EduModel $edu, $oldname) {
 		
 		// Create Variables
 		$name = $edu->getName();
@@ -228,7 +228,7 @@ class PortfolioDAO {
 		return false;
 	}
 	
-	public function editSkill($skill, $oldname) {
+	public function editSkill(SkillModel $skill, $oldname) {
 		
 		// Create Variables
 		$name = $skill->getName();

@@ -1,8 +1,6 @@
 <?php
 // Route Homepage
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@goHome');
 
 // Route Registration Page and Form Submit
 Route::get('/register', function () { return view('register'); });
@@ -44,3 +42,9 @@ Route::post('editSkill', 'PortfolioController@editSkill');
 Route::post('deleteWorkExperience', 'PortfolioController@deleteWorkExperience');
 Route::post('deleteEdu', 'PortfolioController@deleteEdu');
 Route::post('deleteSkill', 'PortfolioController@deleteSkill');
+
+// Route Affinity Groups
+Route::get('/groups', 'GroupController@getAllGroups');
+Route::get('goToAddGroup', function () { return view('addGroup'); });
+Route::post('createGroup', 'GroupController@createGroup');
+Route::post('viewGroupPage', 'GroupController@viewGroupPage');

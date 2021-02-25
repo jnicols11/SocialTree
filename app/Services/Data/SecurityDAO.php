@@ -201,4 +201,35 @@ class SecurityDAO {
 		
 		return false;
 	}
+	
+	public function getUserById($userID) {
+		// generate the query
+		$query = "SELECT * FROM users ";
+		$query .= "WHERE ID = '$userID'";
+		
+		// Query the table
+		$result = mysqli_query($this->connection, $query);
+		$user_info = mysqli_fetch_assoc($result);
+		
+		// create variables
+		$firstname = $user_info['FIRSTNAME'];
+		$lastname = $user_info['LASTNAME'];
+		$email = $user_info['EMAIL'];
+		$number = $user_info['NUMBER'];
+		$password = $user_info['PASSWORD'];
+		$location = $user_info['LOCATION'];
+		$bio = $user_info['BIO'];
+		$picture = $user_info['PICTURE'];
+		$admin = $user_info['ADMIN'];
+		
+		// populate and return model
+		$user = new UserModel($firstname, $lastname, $email, $number, $password);
+		$user->setLocation($location);
+		$user->setBio($bio);
+		$user->setPicture($picture);
+		$user->setAdmin($admin);
+		
+		return $user;
+	}
+	
 }

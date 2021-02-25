@@ -1,0 +1,69 @@
+.socialContainer {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 40px;
+}
+
+.groupList {
+	background-color: #fff;
+	width: 200%;
+	margin-bottom: 40px;
+	border-radius: 20px;
+	padding: 15px 0;
+}
+
+.addGroupForm {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.addGroupBtn {
+	width: 70%;
+	height: 25px;
+	border-radius: 20px;
+	color: #fff;
+	background-color: #009933;
+	box-shadow: 2px 2px 1px #000;
+	transition: all .5s;
+}
+
+.addGroupBtn:hover {
+	transform: translate(5px, -5px);
+	background-color: #fff;
+	color: #009933;
+}
+
+.ownershipStar {
+	font-size: 20px;
+	color: #fff;
+}
+
+.groupForm {
+	display: flex;
+	justify-content: space-evenly;
+	background-color: #009933;
+	border-radius: 50px;
+	margin-bottom: 15px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.groupFormLabel {
+	font-size: 12px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.groupPageBtn {
+	border-radius: 20px;
+	color: #009933;
+	width: 25%;
+	transition: all .2s;
+}
+
+.groupPageBtn:hover {
+	color: #fff;
+	background-color: #009933;
+}
+

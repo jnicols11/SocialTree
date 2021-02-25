@@ -37,7 +37,7 @@ class UserController extends Controller
 		// Send User to be registered to service
 		if($service->register($user)) {
 			// If registered success send view with binded model
-			return view('registerSuccess', ['user' => $user]);
+			return redirect('/login');
 		}
 		
 		// User was not registered
@@ -56,7 +56,7 @@ class UserController extends Controller
 		// Send User to be logged in with service
 		if($service->login($email, $password)) {
 			// If logged in success send view with binded model
-			return view('home');
+			return redirect('/');
 		}
 		
 		// Login failed

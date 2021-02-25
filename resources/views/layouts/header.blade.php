@@ -10,6 +10,7 @@
 			<?php if(Session::get('firstname') != null) { 
 				?>
 				<li class="navbar__list__item"><a href="./profile">View your Profile</a></li>
+				<li class="navbar__list__item"><a href="./groups">Groups</a></li>
 				<li class="navbar__list__item"><a href="./logout">Logout</a></li>
 			<?php } else {
 				?>

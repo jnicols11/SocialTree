@@ -6,6 +6,7 @@ use App\Models\UserModel;
 use App\Services\Data\SecurityDAO;
 use App\Services\Data\PortfolioDAO;
 use App\Services\Data\JobDAO;
+use App\Services\Data\GroupDAO;
 
 class SecurityService {
 	private $connection;
@@ -53,6 +54,11 @@ class SecurityService {
 	public function deleteUserByEmail($email) {
 		$dao = new SecurityDAO($this->connection);
 		return $dao->deleteUserByEmail($email);
+	}
+	
+	public function getUserById($userID) {
+		$dao = new SecurityDAO($this->connection);
+		return $dao->getUserById($userID);
 	}
 	
 	// Portfolio Functions
@@ -137,6 +143,32 @@ class SecurityService {
 	public function deleteJobById($id) {
 		$dao = new JobDAO($this->connection);
 		return $dao->deleteJobById($id);
+	}
+	
+	// Group Functions
+	public function createGroup($group) {
+		$dao = new GroupDAO($this->connection);
+		return $dao->createGroup($group);
+	}
+	
+	public function getAllOwnedGroups() {
+		$dao = new GroupDAO($this->connection);
+		return $dao->getAllOwnedGroups();
+	}
+	
+	public function getGroupById($id) {
+		$dao = new GroupDAO($this->connection);
+		return $dao->getGroupById($id);
+	}
+	
+	public function getAllUsersInGroup($group) {
+		$dao = new GroupDAO($this->connection);
+		return $dao->getAllUsersInGroup($group);
+	}
+	
+	public function getAllGroups() {
+		$dao = new GroupDAO($this->connection);
+		return $dao->getAllGroups();
 	}
 }
 
