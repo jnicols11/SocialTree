@@ -10,6 +10,7 @@
 	margin-bottom: 40px;
 	border-radius: 20px;
 	padding: 15px 0;
+	box-shadow: 10px 10px 8px 10px #888;
 }
 
 .addGroupForm {
@@ -47,6 +48,7 @@
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
+	height: 40px;
 }
 
 .groupFormLabel {
@@ -56,9 +58,9 @@
 }
 
 .groupPageBtn {
-	border-radius: 20px;
+	border-radius: 5em;
 	color: #009933;
-	width: 25%;
+	width: 40%;
 	transition: all .2s;
 }
 

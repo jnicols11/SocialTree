@@ -170,5 +170,20 @@ class SecurityService {
 		$dao = new GroupDAO($this->connection);
 		return $dao->getAllGroups();
 	}
+	
+	public function getAllUserConnectedGroups() {
+		$dao = new GroupDAO($this->connection);
+		return $dao->getAllUserConnectedGroups();
+	}
+	
+	public function joinGroup($userID, $groupID) {
+		$dao = new GroupDAO($this->connection);
+		return $dao->joinGroup($userID, $groupID);
+	}
+	
+	public function leaveGroup($userID, $groupID) {
+		$dao = new GroupDAO($this->connection);
+		return $dao->leaveGroup($userID, $groupID);
+	}
 }
 

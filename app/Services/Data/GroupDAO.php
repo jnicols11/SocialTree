@@ -131,7 +131,58 @@ class GroupDAO {
 			array_push($groups, $group);
 		}
 		
-		return groups;
+		return $groups;
+	}
+	
+	public function getAllUserConnectedGroups() {
+		// establish variables
+		$userID = session('id');
+		
+		// generate the query
+		$query = "SELECT * FROM branchconnection ";
+		$query .= "WHERE users_ID = '$userID'";
+		
+		// query the table
+		$result = mysqli_query($this->connection, $query);
+		$groupIDs = [];
+		while($row = mysqli_fetch_assoc($result)) {
+			// set variables
+			$groupID = $row['branch_ID'];
+			
+			// push branch ID to array
+			array_push($groupIDs, $groupID);
+		}
+		
+		return $groupIDs;
+	}
+	
+	public function joinGroup($userID, $groupID) {
+		// generate the query
+		$query = "INSERT INTO branchconnection (users_ID, branch_ID) ";
+		$query .= "VALUES ('$userID', '$groupID')";
+		
+		// query the table
+		$result = mysqli_query($this->connection, $query);
+		if($result) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public function leaveGroup($userID, $groupID) {
+		// generate the query
+		$query = "DELETE FROM branchconnection ";
+		$query .= "WHERE users_ID = '$userID' ";
+		$query .= "AND branch_ID = '$groupID'";
+		
+		// query the table
+		$result = mysqli_query($this->connection, $query);
+		if($result) {
+			return true;
+		}
+		
+		return false;
 	}
 }
 

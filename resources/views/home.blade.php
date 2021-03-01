@@ -23,13 +23,21 @@
 					<h2 class="socialTitle">Your Groups</h2>
 					<div class="groupList">
 						<!-- Display list of user connected groups -->
-						@foreach($groups as $group)
+						@foreach($model[0] as $group)
 						<form action="viewGroupPage" method="post" class="groupForm">
 							<input type="hidden" name="_token" value="<?php echo csrf_token()?>">
 							<input type="hidden" name="groupID" value="{{ $group->getId() }}">
 							<label class="groupFormLabel">Group Name: </label>
 							<input type="submit" value="{{ $group->getName() }}" class="groupPageBtn">
 							<h5 class="ownershipStar">&starf;</h5>
+						</form>
+						@endforeach
+						@foreach($model[1] as $group)
+						<form action="viewGroupPage" method="post" class="groupForm">
+							<input type="hidden" name="_token" value="<?php echo csrf_token()?>">
+							<input type="hidden" name="groupID" value="{{ $group->getId() }}">
+							<label class="groupFormLabel">Group Name: </label>
+							<input type="submit" value="{{ $group->getName() }}" class="groupPageBtn">
 						</form>
 						@endforeach
 					</div>

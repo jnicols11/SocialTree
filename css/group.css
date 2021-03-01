@@ -7,3 +7,34 @@
 	margin-right: auto;
 	border-radius: 20px;
 }
+
+.groupIntro {
+	display: flex;
+	justify-content: space-evenly;
+	padding-top: 50px;
+	color: #009933;
+}
+
+.groupDescContainer {
+	margin-left: 400px;
+	margin-top: 40px;
+}
+
+.groupDesc {
+	font-size: 16px;
+	width: 22em;
+	line-height: 200%;
+}
+
+.groupUsersContainer {
+	margin-top: 100px;
+	text-align: center;
+}
+
+.userLabel {
+	font-size: 16px;
+}
+
+.groupTitle {
+	color: #009933;
+}

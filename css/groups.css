@@ -1,0 +1,75 @@
+.groupListContainer {
+	background-color: #009933;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+	border-radius: 20px;
+	box-shadow: 10px 10px 8px 10px #888;
+}
+
+.groupContainer {
+	display: flex;
+	justify-content: space-around;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.groupOwnedContainer {
+	display: flex;
+	justify-content: space-evenly;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.groupName {
+	color: #fff;
+}
+
+.viewGroupBtn {
+	width: 130%;
+	height: 30px;
+	border-radius: 20px;
+	background-color: #fff;
+	color: #009933;
+	box-shadow: 2px 2px #000;
+	transition: all .3s;
+}
+
+.joinGroupBtn {
+	width: 200%;
+	height: 30px;
+	border-radius: 20px;
+	background-color: #fff;
+	color: #009933;
+	box-shadow: 2px 2px #000;
+	transition: all .3s;
+}
+
+.leaveGroupBtn {
+	width: 150%;
+	height: 30px;
+	border-radius: 20px;
+	background-color: #ff0000;
+	color: #000;
+	box-shadow: 2px 2px #000;
+	transition: all .3s;
+}
+
+.viewGroupBtn:hover {
+	transform: translate(5px, -5px);
+	background-color: #009933;
+	color: #fff;
+}
+
+.joinGroupBtn:hover {
+	transform: translate(5px, -5px);
+	background-color: #009933;
+	color: #fff;
+}
+
+.leaveGroupBtn:hover {
+	transform: translate(5px, -5px);
+	background-color: #fff;
+	color: #ff0000;
+}

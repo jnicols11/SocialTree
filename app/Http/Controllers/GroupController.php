@@ -62,13 +62,55 @@ class GroupController extends Controller
 	}
 	
 	public function getAllGroups() {
+		// create return array
+		$model = [];
+		
 		// establish instance of service
 		$service = new SecurityService();
 		
 		// populate groups array from service
 		$groups = $service->getAllGroups();
 		
+		// add groups to return array
+		array_push($model, $groups);
+		
+		// get all groups user is a member of
+		$userGroups = $service->getAllUserConnectedGroups();
+		
+		// add user groups to return array
+		array_push($model, $userGroups);
+		
 		// pass groups to view
-		return view('groups', compact('groups'));
+		return view('groups', compact('model'));
+	}
+	
+	public function joinGroup(Request $request) {
+		// Establish Variables from request
+		$groupID = $request->input('groupID');
+		$userID = session('id');
+		
+		// Create instanct of Security Service
+		$service = new SecurityService();
+		
+		if($service->joinGroup($userID, $groupID)) {
+			return redirect('/groups');
+		}
+		
+		return view('joinGroupFail');
+	}
+	
+	public function leaveGroup(Request $request) {
+		// Establish Variables from request
+		$groupID = $request->input('groupID');
+		$userID = session('id');
+		
+		// Create instance of Security Service
+		$service = new SecurityService();
+		
+		if($service->leaveGroup($userID, $groupID)) {
+			return redirect('/groups');
+		}
+		
+		return view('leaveGroupFail');
 	}
 }

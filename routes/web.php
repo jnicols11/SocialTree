@@ -48,3 +48,5 @@ Route::get('/groups', 'GroupController@getAllGroups');
 Route::get('goToAddGroup', function () { return view('addGroup'); });
 Route::post('createGroup', 'GroupController@createGroup');
 Route::post('viewGroupPage', 'GroupController@viewGroupPage');
+Route::post('joinGroup', 'GroupController@joinGroup');
+Route::post('leaveGroup', 'GroupController@leaveGroup');
