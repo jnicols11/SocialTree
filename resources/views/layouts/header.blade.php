@@ -4,6 +4,13 @@
 	<link href="{{ asset('css/header.css') }}" rel="stylesheet">
 </head>
 <body>
+	<div class="searchContainer">
+		<form action="doSearch" method="post" class="searchForm">
+			<input type="hidden" name="_token" value="<?php echo csrf_token()?>">
+			<input type="text" name="searchValue" placeholder="Search...">
+			<input type="submit" class="searchBtn" value="Search">
+		</form>
+	</div>
 	<div class="navbar">
 		<ul class="navbar__list">
 			<li class="navbar__list__item"><a href="./">Logo</a></li>

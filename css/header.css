@@ -11,7 +11,7 @@ h2 {
 	width: 80%;
 	margin: 0 auto;
 	height: 5rem;
-	margin-top: 5rem;
+	margin-top: 1rem;
 	border: solid 1px black;
 }
 
@@ -42,4 +42,10 @@ h2 {
 
 #logo {
 	list-style: none;
+}
+
+.searchContainer {
+	margin-top: 5rem;
+	text-align: right;
+	margin-right: 20rem;
 }

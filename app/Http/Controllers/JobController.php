@@ -69,4 +69,18 @@ class JobController extends Controller
 		
 		return view('DeleteJobFail');
 	}
+	
+	public function goToJob(Request $request) {
+		// Establish Variables from Request
+		$id = $request->input('jobID');
+		
+		// Create instance of Security Service
+		$service = new SecurityService();
+		
+		// populate model
+		$job = $service->getJobById($id);
+		
+		// return view
+		return view('jobpage', ['job' => $job]);
+	}
 }

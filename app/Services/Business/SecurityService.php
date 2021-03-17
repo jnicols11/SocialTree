@@ -7,6 +7,7 @@ use App\Services\Data\SecurityDAO;
 use App\Services\Data\PortfolioDAO;
 use App\Services\Data\JobDAO;
 use App\Services\Data\GroupDAO;
+use App\Services\Data\SearchDAO;
 
 class SecurityService {
 	private $connection;
@@ -145,6 +146,11 @@ class SecurityService {
 		return $dao->deleteJobById($id);
 	}
 	
+	public function getJobById($id) {
+		$dao = new JobDAO($this->connection);
+		return $dao->getJobById($id);
+	}
+	
 	// Group Functions
 	public function createGroup($group) {
 		$dao = new GroupDAO($this->connection);
@@ -184,6 +190,22 @@ class SecurityService {
 	public function leaveGroup($userID, $groupID) {
 		$dao = new GroupDAO($this->connection);
 		return $dao->leaveGroup($userID, $groupID);
+	}
+	
+	// Search Functions
+	public function getJobsFromSearch($value) {
+		$dao = new SearchDAO($this->connection);
+		return $dao->getJobsFromSearch($value);
+	}
+	
+	public function getUsersFromSearch($value) {
+		$dao = new SearchDAO($this->connection);
+		return $dao->getUsersFromSearch($value);
+	}
+	
+	public function getGroupsFromSearch($value) {
+		$dao = new SearchDAO($this->connection);
+		return $dao->getGroupsFromSearch($value);
 	}
 }
 

@@ -86,5 +86,24 @@ class JobDAO {
 		
 		return false;
 	}
+	
+	public function getJobById($id) {
+		// Generate the query
+		$query = "SELECT * FROM job WHERE ID = '$id' LIMIT 1";
+		
+		$result = mysqli_query($this->connection, $query);
+		while($row = mysqli_fetch_assoc($result)) {
+			// create variables
+			$title = $row['TITLE'];
+			$company = $row['COMPANY'];
+			$description = $row['DESCRIPTION'];
+			$job = new JobModel($title, $company, $description);
+			$job->setId($id);
+			
+			return $job;
+		}
+		
+		return false;
+	}
 }
 
