@@ -19,6 +19,9 @@
     </div>
     <a href="#apply" class="applyBtn">Apply</a>
 </div>
+<div class="applyPopup">
+    <h2>Successfully Applied for {{ $job->getTitle() }} for {{ $job->getCompany() }}</h2>
+</div>
 @include('layouts.footer')
 </body>
 </html>
