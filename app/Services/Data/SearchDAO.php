@@ -2,6 +2,7 @@
 
 namespace App\Services\Data;
 
+use Illuminate\Support\Facades\Log;
 use App\Models\JobModel;
 use App\Models\UserModel;
 use App\Models\GroupModel;
@@ -12,11 +13,14 @@ class SearchDAO
 
     public function __construct($connection)
     {
+        Log::info('Creating instance of SearchDAO');
         $this->connection = $connection;
     }
 
     public function getJobsFromSearch($value)
     {
+        // Log function entry
+        Log::info('Entering function getJobsFromSearch in class SearchDAO');
 
         // cleanse data to prevent SQL injection
         $value = mysqli_real_escape_string($this->connection, $value);
@@ -33,11 +37,16 @@ class SearchDAO
             array_push($jobs, $job);
         }
 
+        // Log function exit
+        Log::info('Exiting function getJobsFromSearch in class SearchDAO');
+
         return $jobs;
     }
 
     public function getUsersFromSearch($value)
     {
+        // Log function entry
+        Log::info('Entering function getUsersFromSearch in class SearchDAO');
 
         // Cleanse data to prevent SQL injection
         $value = mysqli_real_escape_string($this->connection, $value);
@@ -57,11 +66,16 @@ class SearchDAO
             array_push($users, $user);
         }
 
+        // Log function exit
+        Log::info('Exiting function getUsersFromSearch in class SearchDAO');
+
         return $users;
     }
 
     public function getGroupsFromSearch($value)
     {
+        // Log function entry
+        Log::info('Entering function getGroupsFromSearch in class SearchDAO');
 
         // Cleanse data to prevent SQL injection
         $value = mysqli_real_escape_string($this->connection, $value);
@@ -86,6 +100,9 @@ class SearchDAO
             // push model to array
             array_push($groups, $group);
         }
+
+        // Log function exit
+        Log::info('Exiting function getGroupsFromSearch in class SearchDAO');
 
         return $groups;
     }

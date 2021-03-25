@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Services\Business\SecurityService;
 
 class SearchController extends Controller
 {
     public function validateRequest(Request $request)
     {
+        // Log function entry
+        Log::info('Entering function validateRequest in class SearchController');
+
         // Setup Data Validation Rules
         $rules = ['searchValue' => 'Required | Between:1,50'];
+
+        // Log function exit
+        Log::info('Exiting function validateRequest in class SearchController');
 
         // Validate the data
         $this->validate($request, $rules);
