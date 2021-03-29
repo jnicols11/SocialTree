@@ -4,7 +4,7 @@ namespace App\Models;
 
 use App\Services\Business\SecurityService;
 
-class UserModel
+class UserModel implements \JsonSerializable
 {
     private $id;
     private $firstname;
@@ -187,5 +187,11 @@ class UserModel
     public function setId($id)
     {
         $this->id = $id;
+    }
+    
+    public function jsonSerialize() {
+    	$vars = get_object_vars($this);
+    	
+    	return $vars;
     }
 }

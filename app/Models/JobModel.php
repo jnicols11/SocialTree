@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class JobModel {
+class JobModel implements \JsonSerializable {
 	private $title;
 	private $company;
 	private $description;
@@ -68,6 +68,12 @@ class JobModel {
 	 */
 	public function setId($id) {
 		$this->id = $id;
+	}
+	
+	public function jsonSerialize() {
+		$vars = get_object_vars($this);
+		
+		return $vars;
 	}
 }
 

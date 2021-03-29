@@ -276,4 +276,23 @@ class UserController extends Controller
 
 		return view('home');
 	}
+	
+	public function getUserForApi($id) {
+		// Log function entry
+		Log::info('Entering function getUserForApi in class UserController');
+		
+		// Create instance of service
+		$service = new SecurityService();
+		
+		// Get user from service
+		$user = $service->getUserById($id);
+		
+		// Serialize the user to Json
+		$json = json_encode($user);
+		
+		// Log the function exit
+		Log::info('Exiting function getUserForApi in class UserController');
+		
+		return $json;
+	}
 }

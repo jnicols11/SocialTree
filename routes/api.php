@@ -13,6 +13,19 @@ use Illuminate\Http\Request;
 |
 */
 
+// get all jobs (GET) /api/user/{id}
+Route::get('/user/{id}', 'UserController@getUserForApi');
+
+// get a single job (GET) /api/job/{id}
+Route::get('/jobs/{id}', 'JobController@getJobForApi');
+
+// get all jobs (GET) /api/jobs
+Route::get('/jobs', 'JobController@getAllJobsForApi');
+
+Route::get('/testapi', function () {
+    return ['message' => 'hello'];
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

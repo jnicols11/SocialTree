@@ -53,18 +53,23 @@
     -o-transform: translate(4px, -4px);
 }
 
-.applyPopup {
+.apply {
     display: none;
-	visibility: hidden;
-	opacity: 0;
-	transition: all 2s;
-	backdrop-filter: blur(10px);
-	background-color: rgba(black, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 2s;
+    backdrop-filter: blur(10px);
+    background-color: rgba(black, 0.3);
 }
 
-.applyPopup:target {
+.apply:target {
     display: block;
-	visibility: visible;
-	opacity: 1;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
     transform: translate(0, -20px);
 }
