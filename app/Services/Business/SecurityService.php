@@ -132,12 +132,11 @@ class SecurityService
         Log::info('Entering function getWorkHistoryById in class SecurityService');
 
         $dao = new PortfolioDAO($this->connection);
-        $work = $dao->getWorkHistoryById($id);
 
         // Log function exit
         Log::info('Exiting function getWorkHistoryById in class SecurityService');
 
-        return $work;
+        return $dao->getWorkHistoryById($id);
     }
 
     public function getEduHistoryById($id)
